@@ -1,13 +1,26 @@
 import Lottie from "lottie-react";
 import registerLottie from '../../src/assets/register.json'
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import AuthContext from "../Context/AuthContext/AuthContext";
 
 
 const Register = () => {
 
+    const {createUser} = useContext(AuthContext);
+
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        createUser(data.email, data.password)
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => {
+            console.log('ERROR', error.message);
+        })
+    }
+    
 
 
     return (
