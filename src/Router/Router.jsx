@@ -8,6 +8,7 @@ import Services from "../Pages/Services";
 import AddService from "../Pages/AddService";
 import MyReview from "../Pages/MyReview";
 import Register from "../Pages/Register";
+import Signin from "../Pages/Signin";
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/signin",
+                element: <Signin></Signin>
             }
         ]
     },
