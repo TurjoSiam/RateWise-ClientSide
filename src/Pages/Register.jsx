@@ -9,28 +9,36 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser, userUpdateWhenSignin } = useContext(AuthContext);
 
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
         createUser(data.email, data.password)
-        .then(result => {
-            console.log(result);
-            toast.success('Registration Successful', {
-                position: 'bottom-right',
-                transition: Slide
+            .then(result => {
+                console.log(result);
+                userUpdateWhenSignin({
+                    displayName: data.name,
+                    photoURL: data.photo
+                })
+                    .then(result => {
+                        console.log(result);
+                        toast.success('Registration Successful', {
+                            position: 'bottom-right',
+                            transition: Slide
+                        })
+                    })
+
             })
-        })
-        .catch(error => {
-            console.log('ERROR', error.message);
-            toast.error('Something went wrong', {
-                position: 'bottom-right',
-                transition: Slide
+            .catch(error => {
+                console.log('ERROR', error.message);
+                toast.error('Something went wrong', {
+                    position: 'bottom-right',
+                    transition: Slide
+                })
             })
-        })
     }
-    
+
 
 
     return (

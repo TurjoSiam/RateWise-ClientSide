@@ -1,7 +1,14 @@
-import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import AuthContext from "../../Context/AuthContext/AuthContext";
+import { Slide, toast } from "react-toastify";
 
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
+    const { user, signOutUser } = useContext(AuthContext);
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -9,6 +16,28 @@ const Navbar = () => {
         <li><NavLink to="/addservice">Add Service</NavLink></li>
         <li><NavLink to="/myreview">My Reviews</NavLink></li>
     </>
+
+    const handleSignOut = () => {
+        signOutUser()
+        .then(result => {
+            console.log(result);
+            toast.success('Signout Successful', {
+                position: 'bottom-right',
+                transition: Slide
+            });
+            navigate("/signin")
+        })
+        .catch(error => {
+            console.log('ERROR', error.message);
+            toast.error('Something Went Wrong', {
+                position: 'bottom-right',
+                transition: Slide
+            })
+        })
+    }
+
+
+
 
     return (
         <div>
@@ -43,7 +72,20 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/register" className="btn">Register</Link>
+                    {
+                        user ?
+                            <>
+                                <div className="flex items-center gap-2">
+                                    <img className="w-12 h-12 rounded-full object-cover" src={user?.photoURL} alt="profile photo" />
+                                    <button onClick={handleSignOut} className="btn">Sign Out</button>
+                                </div>
+                            </>
+                            :
+                            <>
+                                <Link to="/signin" className="btn">Sign In</Link>
+                                <Link to="/register" className="btn">Register</Link>
+                            </>
+                    }
                 </div>
             </div>
         </div>
