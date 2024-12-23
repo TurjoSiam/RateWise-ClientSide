@@ -28,7 +28,7 @@ const Navbar = () => {
                 navigate("/signin")
             })
             .catch(error => {
-                console.log('ERROR', error.message);
+                console.log('ERROR occured', error.message);
                 toast.error('Something Went Wrong', {
                     position: 'bottom-right',
                     transition: Slide
