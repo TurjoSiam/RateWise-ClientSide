@@ -9,6 +9,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const { user, signOutUser } = useContext(AuthContext);
+    console.log(user);
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -19,21 +20,20 @@ const Navbar = () => {
 
     const handleSignOut = () => {
         signOutUser()
-        .then(result => {
-            console.log(result);
-            toast.success('Signout Successful', {
-                position: 'bottom-right',
-                transition: Slide
-            });
-            navigate("/signin")
-        })
-        .catch(error => {
-            console.log('ERROR', error.message);
-            toast.error('Something Went Wrong', {
-                position: 'bottom-right',
-                transition: Slide
+            .then(() => {
+                toast.success('Signout Successful', {
+                    position: 'bottom-right',
+                    transition: Slide
+                });
+                navigate("/signin")
             })
-        })
+            .catch(error => {
+                console.log('ERROR', error.message);
+                toast.error('Something Went Wrong', {
+                    position: 'bottom-right',
+                    transition: Slide
+                })
+            })
     }
 
 
@@ -76,7 +76,10 @@ const Navbar = () => {
                         user ?
                             <>
                                 <div className="flex items-center gap-2">
-                                    <img className="w-12 h-12 rounded-full object-cover" src={user?.photoURL} alt="profile photo" />
+                                    <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                        <img className="w-12 h-12 rounded-full object-cover" src={user.photoURL} alt="profile photo" />
+                                    </div>
+
                                     <button onClick={handleSignOut} className="btn">Sign Out</button>
                                 </div>
                             </>

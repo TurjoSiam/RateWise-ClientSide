@@ -4,10 +4,12 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Slide, toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const { createUser, userUpdateWhenSignin } = useContext(AuthContext);
 
@@ -27,6 +29,7 @@ const Register = () => {
                             position: 'bottom-right',
                             transition: Slide
                         })
+                        navigate("/")
                     })
 
             })
