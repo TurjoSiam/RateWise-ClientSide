@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
 
-    const { company_name, company_logo, service_name, website, category } = useLoaderData()
+    const { _id, company_name, company_logo, service_name, website, category } = useLoaderData()
 
 
     return (
@@ -17,6 +17,7 @@ const ServiceDetails = () => {
                 <div className="px-2 py-1 rounded-full bg-indigo-400 w-fit">
                     <p>{category}</p>
                 </div>
+                <Link className="btn" to={`/addreview/${_id}`}>Add Review</Link>
             </div>
         </div>
     );
