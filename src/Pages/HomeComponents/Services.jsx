@@ -1,18 +1,28 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Service from "./Service";
+import AuthContext from "../../Context/AuthContext/AuthContext";
+import loader from "/loader.gif"
 
 const Services = () => {
+
+    const { loading } = useContext(AuthContext);
 
     const [services, setServices] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5000/services')
-        .then(res => res.json())
-        .then(data => {
-            setServices(data);
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                setServices(data);
+                console.log(data);
+            })
     }, [])
+
+    if (loading) {
+        return <div className="w-full flex items-center justify-center h-screen">
+            <img src={loader} alt="" />
+        </div>
+    }
 
 
     return (

@@ -4,13 +4,15 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Slide, toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
 
 const Signin = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state || "/";
 
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
 
@@ -24,7 +26,7 @@ const Signin = () => {
                     position: 'bottom-right',
                     transition: Slide
                 })
-                navigate("/")
+                navigate(from);
             })
             .catch(error => {
                 console.log('ERROR', error.message);

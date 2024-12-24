@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AllService from "./AllService";
+import AuthContext from "../Context/AuthContext/AuthContext";
+import loader from "/loader.gif"
 
 
 const AllServices = () => {
+
+    const { loading } = useContext(AuthContext);
 
     const [services, setServices] = useState([]);
 
@@ -14,6 +18,12 @@ const AllServices = () => {
                 setServices(data);
             })
     }, [])
+
+    if (loading) {
+        return <div className="w-full flex items-center justify-center h-screen">
+            <img src={loader} alt="" />
+        </div>
+    }
 
 
     return (

@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,
 import auth from "../../Firebase/Firebase.init";
 
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
     const googleProvider = new GoogleAuthProvider();
 
