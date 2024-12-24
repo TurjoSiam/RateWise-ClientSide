@@ -15,7 +15,7 @@ const AddReview = () => {
 
     const date = new Date().toJSON().slice(0, 10);
 
-    const [rating, setRating] = useState(0)
+    const [rating, setRating] = useState(0);
 
     const { register, handleSubmit } = useForm();
 
@@ -24,6 +24,7 @@ const AddReview = () => {
         data.reviewerName = user?.displayName;
         data.reviewerEmail = user?.email;
         data.reviewerPhoto = user?.photoURL;
+        data.rating = rating;
 
         fetch('http://localhost:5000/service-reviews', {
             method: 'POST',
@@ -33,7 +34,7 @@ const AddReview = () => {
             body: JSON.stringify(data)
         })
             .then(() => {
-                toast.success('Service Added Successfully', {
+                toast.success('Review Added Successfully', {
                     position: 'bottom-right',
                     transition: Slide
                 })
@@ -53,7 +54,7 @@ const AddReview = () => {
                     <h2 className="text-sm mb-2">Rating</h2>
                     <div className="flex items-center gap-3">
                         <Rating style={{ maxWidth: 270 }} transition="zoom" items={10} value={rating} onChange={setRating} />
-                        <input {...register('rating')} className="rounded-2xl w-12 text-center h-7" readOnly value={rating} type="text" />
+                        <input className="rounded-2xl w-12 text-center h-7" readOnly value={rating} type="text" />
                     </div>
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
