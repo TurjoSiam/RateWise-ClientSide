@@ -1,10 +1,11 @@
-
+import Services from "./HomeComponents/Services";
 
 const Home = () => {
+
     return (
-        <div>
-            <h2>this is home page</h2>
-        </div>
+        <>
+            <Services></Services>
+        </>
     );
 };
 

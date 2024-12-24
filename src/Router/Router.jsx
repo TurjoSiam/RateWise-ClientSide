@@ -4,11 +4,11 @@ import {
 import Layout from "../MainLayout/Layout";
 import Home from "../Pages/Home";
 import Error from "../Pages/Error";
-import Services from "../Pages/Services";
 import AddService from "../Pages/AddService";
 import MyReview from "../Pages/MyReview";
 import Register from "../Pages/Register";
 import Signin from "../Pages/Signin";
+import AllServices from "../Pages/AllServices";
 
 
 
@@ -23,8 +23,8 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: "/services",
-                element: <Services></Services>
+                path: "/allservices",
+                element: <AllServices></AllServices>
             },
             {
                 path: "/addservice",
