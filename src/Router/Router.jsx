@@ -9,6 +9,7 @@ import MyReview from "../Pages/MyReview";
 import Register from "../Pages/Register";
 import Signin from "../Pages/Signin";
 import AllServices from "../Pages/AllServices";
+import ServiceDetails from "../Pages/ServiceDetails";
 
 
 
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
             {
                 path: "/signin",
                 element: <Signin></Signin>
+            },
+            {
+                path: "/allservices/:id",
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/allservices/${params.id}`)
             }
         ]
     },

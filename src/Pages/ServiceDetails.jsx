@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
+const ServiceDetails = () => {
 
-const AllService = ({ item }) => {
+    const { company_name, company_logo, service_name, website, category } = useLoaderData()
 
-    const { _id, company_name, company_logo, service_name, website, category } = item;
 
     return (
         <div className="flex items-start gap-3">
@@ -17,10 +17,9 @@ const AllService = ({ item }) => {
                 <div className="px-2 py-1 rounded-full bg-indigo-400 w-fit">
                     <p>{category}</p>
                 </div>
-                <Link to={`/allservices/${_id}`} className="btn">See Details</Link>
             </div>
         </div>
     );
 };
 
-export default AllService;
+export default ServiceDetails;

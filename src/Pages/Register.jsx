@@ -7,11 +7,13 @@ import { Slide, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 
 
+
+
 const Register = () => {
 
-    const navigate = useNavigate();
+    const { createUser, userUpdateWhenSignin, signOutUser } = useContext(AuthContext);
 
-    const { createUser, userUpdateWhenSignin } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const { register, handleSubmit } = useForm();
 
@@ -28,10 +30,12 @@ const Register = () => {
                         toast.success('Registration Successful', {
                             position: 'bottom-right',
                             transition: Slide
-                        })
-                        navigate("/")
+                        });
+                        signOutUser()
+                            .then(() => {
+                               navigate("/signin") 
+                            });
                     })
-
             })
             .catch(error => {
                 console.log('ERROR', error.message);

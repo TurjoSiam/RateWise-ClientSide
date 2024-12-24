@@ -9,13 +9,12 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const { user, signOutUser } = useContext(AuthContext);
-    console.log(user);
 
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/allservices">Services</NavLink></li>
-        <li><NavLink to="/addservice">Add Service</NavLink></li>
-        <li><NavLink to="/myreview">My Reviews</NavLink></li>
+        <li><NavLink className="px-0" to="/">Home</NavLink></li>
+        <li><NavLink className="px-0" to="/allservices">Services</NavLink></li>
+        <li><NavLink className="px-0" to="/addservice">Add Service</NavLink></li>
+        <li><NavLink className="px-0" to="/myreview">My Reviews</NavLink></li>
     </>
 
     const handleSignOut = () => {
@@ -67,7 +66,7 @@ const Navbar = () => {
                     <a className="btn btn-ghost text-xl">daisyUI</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 gap-7">
                         {links}
                     </ul>
                 </div>

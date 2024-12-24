@@ -8,4 +8,9 @@ a.active {
     border-bottom: 3px solid blue;
     border-radius: 0px;
     color: black !important;
+    font-weight: bold;
+}
+
+html{
+    overflow-y: scroll;
 }
