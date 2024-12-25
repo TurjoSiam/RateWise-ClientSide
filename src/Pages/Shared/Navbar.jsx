@@ -15,6 +15,7 @@ const Navbar = () => {
         <li><NavLink className="px-0" to="/allservices">Services</NavLink></li>
         <li><NavLink className="px-0" to="/addservice">Add Service</NavLink></li>
         <li><NavLink className="px-0" to="/myreview">My Reviews</NavLink></li>
+        <li><NavLink className="px-0" to="/myservice">My Services</NavLink></li>
     </>
 
     const handleSignOut = () => {
