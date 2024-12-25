@@ -9,7 +9,7 @@ const MyService = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allservices/${user.email}`)
+        fetch(`http://localhost:5000/allservices/service?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data)
