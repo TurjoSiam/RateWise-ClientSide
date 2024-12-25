@@ -13,6 +13,7 @@ import ServiceDetails from "../Pages/ServiceDetails";
 import PrivateRoute from "../Pages/PrivateRoute";
 import AddReview from "../Pages/AddReview";
 import MyService from "../Pages/MyService";
+import UpdateService from "../Pages/UpdateService";
 
 
 
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
             {
                 path: "/myservice",
                 element: <PrivateRoute><MyService></MyService></PrivateRoute>
+            },
+            {
+                path: "/updateservice/:id",
+                element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/allservices/updateservice/${params.id}`)
             },
             {
                 path: "/register",

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../Context/AuthContext/AuthContext';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MyService = () => {
 
@@ -68,7 +68,7 @@ const MyService = () => {
                     <tbody>
 
                         {
-                            services.map((item, index) => <tr>
+                            services.map((item, index) => <tr key={item._id}>
                                 <th>{index+1}</th>
                                 <td>
                                     <div className="flex items-center gap-3">
@@ -92,7 +92,7 @@ const MyService = () => {
                                 </td>
                                 <td>{item.added_date}</td>
                                 <th>
-                                    <button className="btn btn-xs">Update</button>
+                                    <Link to={`/updateservice/${item._id}`} className='btn btn-xs'>Update</Link>
                                     <button onClick={() => handleDelete(item._id)} className="btn btn-xs">Delete</button>
                                 </th>
                             </tr>)
