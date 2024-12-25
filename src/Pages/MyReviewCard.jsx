@@ -1,9 +1,39 @@
 
+import Swal from "sweetalert2";
 
-const MyReviewCard = ({item}) => {
 
-    const { company_name, company_logo, service_name, date, review, rating } = item;
+const MyReviewCard = ({ item }) => {
 
+    const { _id, company_name, company_logo, service_name, date, review, rating } = item;
+
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/service-reviews/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your movie has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                        window.location.reload();
+                    })
+            }
+        });
+    }
 
     return (
         <div className="flex items-start gap-10 bg-orange-100 rounded-2xl my-3 p-5">
@@ -18,6 +48,8 @@ const MyReviewCard = ({item}) => {
                     <h2>Posted Date: {date}</h2>
                 </div>
                 <p>{review}</p>
+                <button className="btn">Update</button>
+                <button onClick={() => handleDelete(_id)} className="btn">Delete</button>
             </div>
         </div>
     );
