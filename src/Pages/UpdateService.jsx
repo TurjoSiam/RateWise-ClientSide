@@ -27,7 +27,7 @@ const UpdateService = () => {
                 console.log(result);
                 Swal.fire({
                     title: "Updated!",
-                    text: "Your movie has been updated.",
+                    text: "Your service has been updated.",
                     icon: "success"
                 });
                 navigate("/myservice");

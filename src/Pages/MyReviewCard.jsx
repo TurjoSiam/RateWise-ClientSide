@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -48,7 +49,7 @@ const MyReviewCard = ({ item }) => {
                     <h2>Posted Date: {date}</h2>
                 </div>
                 <p>{review}</p>
-                <button className="btn">Update</button>
+                <Link to={`/updatereview/${_id}`} className="btn">Update</Link>
                 <button onClick={() => handleDelete(_id)} className="btn">Delete</button>
             </div>
         </div>
