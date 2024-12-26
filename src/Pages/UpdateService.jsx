@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 
 const UpdateService = () => {
 
+    document.title = "RateWise | Update Service"
+
     const navigate = useNavigate();
 
     const { _id, company_name, service_name, website, company_logo, price, category, description } = useLoaderData();
@@ -36,7 +38,7 @@ const UpdateService = () => {
 
 
     return (
-        <div className="mx-auto my-20 w-8/12">
+        <div className="mx-auto my-20 lg:w-8/12">
             
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className="mx-8 bg-violet-50 p-16 rounded-3xl border border-violet-200">

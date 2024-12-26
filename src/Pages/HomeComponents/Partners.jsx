@@ -8,7 +8,7 @@ const Partners = () => {
     return (
         <div className="mx-auto my-20 p-7 bg-orange-50">
             <h2 className='text-center text-3xl underline font-bold text-blue-900 mb-7'>Partners & Collaborators</h2>
-            <div className="flex justify-center gap-5 items-center">
+            <div className="flex flex-col lg:flex-row justify-center gap-5 items-center">
                 <div className="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
                     {/* Profile Picture */}
                     <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4">

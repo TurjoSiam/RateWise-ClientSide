@@ -1,9 +1,11 @@
 import Banner from "./HomeComponents/Banner";
-import Count from "./HomeComponents/CountUp";
+import Count from "./HomeComponents/Count";
 import Partners from "./HomeComponents/Partners";
 import Services from "./HomeComponents/Services";
 
 const Home = () => {
+
+    document.title = "RateWise | Home"
 
     return (
         <>

@@ -8,6 +8,8 @@ import Swal from "sweetalert2";
 
 const UpdateReview = () => {
 
+    document.title = "RateWise | Update Review"
+
     const navigate = useNavigate();
 
     const date = new Date().toJSON().slice(0, 10);
@@ -40,7 +42,7 @@ const UpdateReview = () => {
     }
 
     return (
-        <div className="w-8/12 mx-auto my-20">
+        <div className="lg:w-8/12 mx-auto my-20">
             <form onSubmit={handleSubmit(onSubmit)} className="mx-8 bg-violet-50 p-16 rounded-3xl border border-violet-200">
             <h1 className="mx-auto text-center text-[30px] font-bold mb-6">Update Review</h1>
                 <div className="relative z-0 w-full mb-5 group">

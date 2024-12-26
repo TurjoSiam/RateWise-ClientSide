@@ -22,7 +22,7 @@ const Banner = () => {
 
 
     return (
-        <div className="w-11/12 mx-auto relative mb-44">
+        <div className="lg:w-11/12 mx-auto relative mb-44">
             <Slider {...settings}>
                 <div className="relative">
                     <img src={banner1} alt="" className="w-full brightness-50 h-[500px] object-cover" />

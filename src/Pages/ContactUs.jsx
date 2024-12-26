@@ -1,8 +1,11 @@
 
 
 const ContactUs = () => {
+
+    document.title = "RateWise | Contact Us"
+
     return (
-        <div className="w-8/12 mx-auto my-20">
+        <div className="lg:w-8/12 mx-auto my-20">
             <form className="mx-8 bg-cyan-50 p-16 rounded-3xl border border-cyan-200">
                 <h1 className="mx-auto text-center text-[30px] font-bold mb-6">Contact Us</h1>
                 <div className="relative z-0 w-full mb-5 group">

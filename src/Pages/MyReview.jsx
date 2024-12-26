@@ -5,6 +5,8 @@ import MyReviewCard from "./MyReviewCard";
 
 const MyReview = () => {
 
+    document.title = "RateWise | My Review"
+
     const { user } = useContext(AuthContext);
 
     const [reviews, setReviews] = useState([]);
@@ -19,7 +21,7 @@ const MyReview = () => {
 
 
     return (
-        <div className="w-8/12 mx-auto my-20">
+        <div className="w-10/12 lg:w-8/12 mx-auto my-20">
             {
                 reviews.map(item => <MyReviewCard key={item._id} item={item}></MyReviewCard>)
             }

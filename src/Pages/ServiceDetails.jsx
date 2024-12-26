@@ -21,8 +21,8 @@ const ServiceDetails = () => {
 
 
     return (
-        <div className="flex items-start gap-10 w-8/12 mx-auto my-20">
-            <div className="w-1/3 space-y-3 bg-green-50 p-10 rounded-3xl border border-green-300">
+        <div className="flex items-start flex-col lg:flex-row gap-10 w-10/12 lg:w-8/12 mx-auto my-20">
+            <div className="lg:w-1/3 space-y-3 bg-green-50 p-10 rounded-3xl border border-green-300">
                 <img className="w-60 h-60 border border-teal-300 rounded-3xl object-cover" src={company_logo} alt="company logo" />
                 <h2 className="text-2xl font-bold">{company_name}</h2>
                 <h2 className="font-bold">{service_name}</h2>
@@ -32,7 +32,7 @@ const ServiceDetails = () => {
                 <p className="text-xs">{description}</p>
 
             </div>
-            <div className="space-y-2 w-2/3">
+            <div className="space-y-2 lg:w-2/3">
                 <div>
                     <h2 className="text-3xl mb-3 text-teal-600 font-bold">Reviews</h2>
                     {

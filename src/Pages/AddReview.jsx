@@ -9,6 +9,8 @@ import { Slide, toast } from "react-toastify";
 
 const AddReview = () => {
 
+    document.title = "RateWise | Add Review"
+
     const navigate = useNavigate();
 
     const { id } = useParams();
@@ -46,7 +48,7 @@ const AddReview = () => {
 
 
     return (
-        <div className="w-8/12 mx-auto my-20">
+        <div className="lg:w-8/12 mx-auto my-20">
             <form onSubmit={handleSubmit(onSubmit)} className="mx-8 bg-violet-50 p-16 rounded-3xl border border-violet-200">
             <h1 className="mx-auto text-center text-[30px] font-bold mb-6">Add Review to Service</h1>
                 <div className="relative z-0 w-full mb-5 group">

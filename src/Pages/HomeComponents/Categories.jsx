@@ -7,7 +7,7 @@ import { PiDesktopTower } from "react-icons/pi";
 
 const Categories = () => {
     return (
-        <div className="w-9/12 mx-auto p-7 flex items-center justify-center absolute -bottom-24 left-40 gap-7 bg-white rounded-2xl border shadow-xl">
+        <div className="lg:w-9/12 w-full mx-auto p-7 flex items-center justify-center absolute -bottom-24 lg:left-40 gap-7 bg-white rounded-2xl border shadow-xl lg:overflow-x-hidden overflow-auto">
             <div className="cursor-pointer hover:scale-105 hover:duration-200 hover:ease-in-out rounded-xl p-5 bg-teal-50 w-fit flex flex-col items-center text-lg">
                 <PiDesktopTower className="text-4xl" />
                 <h2>Technology</h2>
