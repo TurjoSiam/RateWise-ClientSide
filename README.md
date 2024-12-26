@@ -21,6 +21,7 @@
 - `sweet alert 2`
 - `slick carouserl`
 - `react hook form`
+- `framer motion`
 - `firebase authentication`
 - `mongodb database`
 ## Live Site Link:

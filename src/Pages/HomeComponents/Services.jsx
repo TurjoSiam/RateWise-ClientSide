@@ -3,6 +3,9 @@ import Service from "./Service";
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import loader from "/loader.gif"
 import { Link } from "react-router-dom";
+import pc from "/pc.png"
+import gear from "/gear.png"
+import { motion } from "motion/react"
 
 const Services = () => {
 
@@ -27,7 +30,21 @@ const Services = () => {
 
     return (
         <div className="w-10/12 mx-auto my-10 flex flex-col items-center">
-            <h2 className="text-4xl underline font-bold text-blue-800 text-center mb-5">Services</h2>
+            <div className="flex w-full items-center justify-around">
+                <motion.div
+                    animate={{ x: 200 }} 
+                    initial={{ x: 0 }}
+                    transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}>
+                    <img src={gear} alt="gear" />
+                </motion.div>
+                <h2 className="text-4xl underline font-bold text-blue-800 text-center mb-5">Services</h2>
+                <motion.div
+                    animate={{ x: -200 }} 
+                    initial={{ x: 0 }} 
+                    transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}>
+                    <img src={pc} alt="gear" />
+                </motion.div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-xl p-5">
                 {
                     services.map(item => <Service key={item._id} item={item}></Service>)

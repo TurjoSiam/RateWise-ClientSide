@@ -31,8 +31,8 @@ const AllServices = () => {
 
     return (
         <div className="w-10/12 mx-auto my-20">
-            <div className="mb-5 flex items-center justify-around">
-                <select className="select border border-teal-500 select-bordered w-full max-w-xs" onChange={e => setFilter(e.target.value)}>
+            <div className="mb-5 flex items-center flex-col lg:flex-row justify-around gap-3">
+                <select className="select border border-teal-500 select-bordered w-full max-w-xs order-2 lg:order-1" onChange={e => setFilter(e.target.value)}>
                     <option value="">Filter by Category</option>
                     <option value="">All</option>
                     <option value="Technology">Technology</option>
@@ -41,8 +41,8 @@ const AllServices = () => {
                     <option value="Education">Education</option>
                     <option value="Home Services">Home Services</option>
                 </select>
-                <h2 className="text-3xl underline font-bold text-center text-blue-900">Available Services</h2>
-                <form className="flex items-start">
+                <h2 className="order-1 lg:order-2 text-3xl underline font-bold text-center text-blue-900">Available Services</h2>
+                <form className="flex items-start order-3 lg:order-3">
                     <input type="text" placeholder="Search by Service Name" className="input input-bordered border border-teal-500 w-full max-w-xs" onChange={e => setSearch(e.target.value)} />
                     <input type="submit" className="btn text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" value="Search" />
                 </form>
