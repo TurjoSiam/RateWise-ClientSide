@@ -1,8 +1,26 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# RateWise - A Service Reviewing Platform
+## Purpose:
+- Offer customers insights into the quality and reliability of services through unbiased feedback.
+- Help users compare services and choose the best options based on reviews and ratings.
+- Build trust between businesses and potential customers by showcasing authentic experiences.
+- Motivate businesses to improve their services based on constructive criticism and feedback.
+## Key Features:
+- See service details and customers review
+- Add service and reviews
+- Checking own added services and reviews
+- Updating and deleting own added services and reviews
+- Registering and signing in options
+## npm Packages Used: 
+- `tailwind CSS`
+- `daisy UI`
+- `Flowbite`
+- `react countup`
+- `react icons`
+- `lottie-react`
+- `react toastify`
+- `sweet alert 2`
+- `slick carouserl`
+- `react hook form`
+- `firebase authentication`
+- `mongodb database`
+## Live Site Link:
