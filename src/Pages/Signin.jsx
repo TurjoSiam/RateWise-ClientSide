@@ -25,11 +25,11 @@ const Signin = () => {
         signInUser(data.email, data.password)
             .then(result => {
                 console.log(result);
-                const user = {email: data.email};
-                axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
-                .then(res => {
-                    console.log(res.data);
-                })
+                // const user = {email: data.email};
+                // axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+                // .then(res => {
+                //     console.log(res.data);
+                // })
                 toast.success('Login Successful', {
                     position: 'bottom-right',
                     transition: Slide

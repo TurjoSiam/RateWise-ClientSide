@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import MyReviewCard from "./MyReviewCard";
+import axios from "axios";
 
 
 const MyReview = () => {
@@ -12,11 +13,15 @@ const MyReview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/service-reviews?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setReviews(data)
-            })
+        // fetch(`http://localhost:5000/service-reviews?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setReviews(data)
+        //     })
+
+        axios.get(`http://localhost:5000/service-reviews?email=${user.email}`, { withCredentials: true })
+            .then(res => setReviews(res.data))
+
     }, [user.email])
 
 

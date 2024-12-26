@@ -36,7 +36,7 @@ const ServiceDetails = () => {
                 <div>
                     <h2 className="text-3xl mb-3 text-teal-600 font-bold">Reviews</h2>
                     {
-                        reviews.map(item => <div className="mb-2 flex items-start bg-cyan-50 rounded-xl p-5 gap-3 border border-teal-500">
+                        reviews.map(item => <div className="mb-2 flex items-start bg-cyan-50 rounded-xl p-5 gap-3 border border-teal-500" key={item._id}>
                             <div>
                                 <img className="w-28 h-8 object-cover rounded-full" src={item.reviewerPhoto} alt="photo" />
                             </div>

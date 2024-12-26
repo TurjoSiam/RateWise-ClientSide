@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../Context/AuthContext/AuthContext';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const MyService = () => {
 
@@ -11,12 +12,18 @@ const MyService = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allservices/service?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setServices(data)
-            })
-    }, [user.email])
+        // fetch(`http://localhost:5000/allservices/service?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setServices(data)
+        //     })
+
+        axios.get(`http://localhost:5000/allservices/service?email=${user.email}`, { withCredentials: true })
+            .then(res => setServices(res.data))
+
+    }, [user.email]);
+
+
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -69,7 +76,7 @@ const MyService = () => {
 
                         {
                             services.map((item, index) => <tr key={item._id}>
-                                <th>{index+1}</th>
+                                <th>{index + 1}</th>
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
