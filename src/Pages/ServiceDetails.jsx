@@ -3,16 +3,16 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
 
-    const { _id, company_name, company_logo, service_name, website, category } = useLoaderData();
+    const { _id, company_name, company_logo, service_name, website, category, price, description } = useLoaderData();
 
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/service-reviews/${_id}`)
-        .then(res => res.json())
-        .then(data => {
-            setReviews(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                setReviews(data);
+            })
     }, [_id])
 
     console.log(reviews);
@@ -21,31 +21,33 @@ const ServiceDetails = () => {
 
 
     return (
-        <div className="flex items-start gap-3">
-            <div className="w-1/3">
-                <img src={company_logo} alt="company logo" />
-            </div>
-            <div className="w-2/3 space-y-2">
+        <div className="flex items-start gap-10 w-8/12 mx-auto my-20">
+            <div className="w-1/3 space-y-3">
+                <img className="w-60 h-60 border border-teal-300 rounded-3xl object-cover" src={company_logo} alt="company logo" />
                 <h2 className="text-2xl font-bold">{company_name}</h2>
                 <h2 className="font-bold">{service_name}</h2>
                 <p>{website}</p>
-                <div className="px-2 py-1 rounded-full bg-indigo-400 w-fit">
-                    <p>{category}</p>
-                </div>
+                <p className="font-bold">{category}</p>
+                <p className="text-green-700">{price}</p>
+                <p className="text-xs">{description}</p>
+
+            </div>
+            <div className="space-y-2 w-2/3">
                 <div>
+                    <h2 className="text-3xl mb-3 text-teal-600 font-bold">Reviews</h2>
                     {
-                        reviews.map(item => <div className="flex items-start bg-cyan-200 rounded-xl p-5 gap-5">
+                        reviews.map(item => <div className="mb-2 flex items-start bg-cyan-50 rounded-xl p-5 gap-3 border border-teal-500">
                             <div>
-                                <img className="w-10 h-10 object-cover rounded-full" src={item.reviewerPhoto} alt="photo" />
+                                <img className="w-8 h-8 object-cover rounded-full" src={item.reviewerPhoto} alt="photo" />
                             </div>
                             <div>
-                                <h2>{item.reviewerName}</h2>
+                                <h2 className="tex-xl font-bold">{item.reviewerName}</h2>
                                 <p>{item.review}</p>
                             </div>
                         </div>)
                     }
                 </div>
-                <Link className="btn" to={`/addreview/${_id}`}>Add Review</Link>
+                <Link className="btn text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" to={`/addreview/${_id}`}>Add Review</Link>
             </div>
         </div>
     );

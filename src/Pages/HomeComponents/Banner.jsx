@@ -21,7 +21,7 @@ const Banner = () => {
 
 
     return (
-        <div>
+        <div className="w-11/12 mx-auto">
             <Slider {...settings}>
                 <div className="relative">
                     <img src={banner1} alt="" className="w-full brightness-50 h-[500px] object-cover" />

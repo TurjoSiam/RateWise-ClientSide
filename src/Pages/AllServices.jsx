@@ -27,8 +27,8 @@ const AllServices = () => {
 
 
     return (
-        <div>
-            <div className="grid grid-cols-3">
+        <div className="w-10/12 mx-auto">
+            <div className="grid grid-cols-3 gap-5 my-20">
                 {
                     services.map(item => <AllService key={item._id} item={item}></AllService>)
                 }

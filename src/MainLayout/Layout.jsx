@@ -16,7 +16,7 @@ const Layout = () => {
     }
 
     return (
-        <div>
+        <div className="mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

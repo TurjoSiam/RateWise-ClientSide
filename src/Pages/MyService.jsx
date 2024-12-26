@@ -52,7 +52,7 @@ const MyService = () => {
 
 
     return (
-        <div>
+        <div className='w-10/12 mx-auto my-20 p-5 border-2 border-teal-500 rounded-2xl'>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -92,8 +92,8 @@ const MyService = () => {
                                 </td>
                                 <td>{item.added_date}</td>
                                 <th>
-                                    <Link to={`/updateservice/${item._id}`} className='btn btn-xs'>Update</Link>
-                                    <button onClick={() => handleDelete(item._id)} className="btn btn-xs">Delete</button>
+                                    <Link to={`/updateservice/${item._id}`} className='btn btn-xs bg-green-300 mr-2'>Update</Link>
+                                    <button onClick={() => handleDelete(item._id)} className="btn btn-xs bg-red-300">Delete</button>
                                 </th>
                             </tr>)
                         }

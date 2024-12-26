@@ -15,6 +15,8 @@ import AddReview from "../Pages/AddReview";
 import MyService from "../Pages/MyService";
 import UpdateService from "../Pages/UpdateService";
 import UpdateReview from "../Pages/UpdateReview";
+import AboutUs from "../Pages/AboutUs";
+import ContactUs from "../Pages/ContactUs";
 
 
 
@@ -70,6 +72,14 @@ const router = createBrowserRouter([
                 path: "/updatereview/:id",
                 element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/service-reviews/updatereview/${params.id}`)
+            },
+            {
+                path: "/aboutus",
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: "/contactus",
+                element: <ContactUs></ContactUs>
             }
         ]
     },

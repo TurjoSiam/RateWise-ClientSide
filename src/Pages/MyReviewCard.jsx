@@ -37,11 +37,11 @@ const MyReviewCard = ({ item }) => {
     }
 
     return (
-        <div className="flex items-start gap-10 bg-orange-100 rounded-2xl my-3 p-5">
+        <div className="flex items-start gap-10 bg-teal-50 rounded-2xl my-3 p-5">
             <div>
-                <img className="w-32" src={company_logo} alt="logo" />
+                <img className="w-28 rounded-2xl border border-green-600" src={company_logo} alt="logo" />
             </div>
-            <div>
+            <div className="space-y-2">
                 <h2 className="text-2xl font-bold">{company_name}</h2>
                 <h2 className="font-bold">{service_name}</h2>
                 <div className="flex items-center gap-20">
@@ -49,8 +49,8 @@ const MyReviewCard = ({ item }) => {
                     <h2>Posted Date: {date}</h2>
                 </div>
                 <p>{review}</p>
-                <Link to={`/updatereview/${_id}`} className="btn">Update</Link>
-                <button onClick={() => handleDelete(_id)} className="btn">Delete</button>
+                <Link to={`/updatereview/${_id}`} className="btn bg-green-300 mr-2">Update</Link>
+                <button onClick={() => handleDelete(_id)} className="btn bg-red-300">Delete</button>
             </div>
         </div>
     );

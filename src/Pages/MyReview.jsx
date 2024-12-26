@@ -19,7 +19,7 @@ const MyReview = () => {
 
 
     return (
-        <div>
+        <div className="w-8/12 mx-auto my-20">
             {
                 reviews.map(item => <MyReviewCard key={item._id} item={item}></MyReviewCard>)
             }
