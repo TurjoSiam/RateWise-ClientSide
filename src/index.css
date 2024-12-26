@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 a.active {
     background-color: white !important;
     border-bottom: 3px solid blue;

@@ -3,6 +3,7 @@ import Navbar from "../Pages/Shared/Navbar";
 import { useContext } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import loader from "/loader.gif"
+import Footer from "../Pages/Shared/Footer";
 
 const Layout = () => {
 
@@ -18,6 +19,7 @@ const Layout = () => {
         <div>
             <Navbar></Navbar>
             <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };
