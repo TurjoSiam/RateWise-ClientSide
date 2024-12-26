@@ -25,3 +25,4 @@
 - `firebase authentication`
 - `mongodb database`
 ## Live Site Link:
+https://ratewise-turjosiam.netlify.app

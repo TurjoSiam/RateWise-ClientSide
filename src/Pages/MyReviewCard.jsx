@@ -18,7 +18,7 @@ const MyReviewCard = ({ item }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/service-reviews/${id}`, {
+                fetch(`https://assignment-11-beta.vercel.app/service-reviews/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
