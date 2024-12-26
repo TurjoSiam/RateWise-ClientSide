@@ -2,12 +2,14 @@ import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Slide, toast } from "react-toastify";
 
 
 const AddReview = () => {
+
+    const navigate = useNavigate();
 
     const { id } = useParams();
 
@@ -38,6 +40,7 @@ const AddReview = () => {
                     position: 'bottom-right',
                     transition: Slide
                 })
+                navigate("/allservices")
             })
     }
 

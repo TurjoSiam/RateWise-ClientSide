@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import banner1 from "/b1.jpg"
 import banner2 from "/b2.jpg"
 import banner3 from "/b3.jpg"
+import Categories from "./Categories";
 
 
 const Banner = () => {
@@ -21,7 +22,7 @@ const Banner = () => {
 
 
     return (
-        <div className="w-11/12 mx-auto">
+        <div className="w-11/12 mx-auto relative mb-44">
             <Slider {...settings}>
                 <div className="relative">
                     <img src={banner1} alt="" className="w-full brightness-50 h-[500px] object-cover" />
@@ -46,6 +47,7 @@ const Banner = () => {
                 </div>
                 
             </Slider>
+            <Categories></Categories>
         </div>
     );
 }

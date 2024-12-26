@@ -1,8 +1,9 @@
+import error from '/error.jpg'
 
 const Error = () => {
     return (
-        <div>
-            <h2>this is error page</h2>
+        <div className="w-full flex justify-center my-12">
+            <img src={error} alt="error page" />
         </div>
     );
 };

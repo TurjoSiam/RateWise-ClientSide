@@ -22,7 +22,7 @@ const ServiceDetails = () => {
 
     return (
         <div className="flex items-start gap-10 w-8/12 mx-auto my-20">
-            <div className="w-1/3 space-y-3">
+            <div className="w-1/3 space-y-3 bg-green-50 p-10 rounded-3xl border border-green-300">
                 <img className="w-60 h-60 border border-teal-300 rounded-3xl object-cover" src={company_logo} alt="company logo" />
                 <h2 className="text-2xl font-bold">{company_name}</h2>
                 <h2 className="font-bold">{service_name}</h2>
@@ -38,10 +38,16 @@ const ServiceDetails = () => {
                     {
                         reviews.map(item => <div className="mb-2 flex items-start bg-cyan-50 rounded-xl p-5 gap-3 border border-teal-500">
                             <div>
-                                <img className="w-8 h-8 object-cover rounded-full" src={item.reviewerPhoto} alt="photo" />
+                                <img className="w-28 h-8 object-cover rounded-full" src={item.reviewerPhoto} alt="photo" />
                             </div>
                             <div>
-                                <h2 className="tex-xl font-bold">{item.reviewerName}</h2>
+                                <div className="flex items-center gap-5">
+                                    <h2 className="text-xl font-bold">{item.reviewerName}</h2>
+                                    <div className="text-xs px-2 py-1 bg-orange-200 rounded-2xl w-fit">
+                                        Rating: {item.rating}/10
+                                    </div>
+                                    <p className="text-xs text-gray-500">{item.date}</p>
+                                </div>
                                 <p>{item.review}</p>
                             </div>
                         </div>)

@@ -5,7 +5,7 @@ const Service = ({ item }) => {
     const { _id, company_name, company_logo, service_name, website, category } = item;
 
     return (
-        <div className="flex items-start gap-3 bg-green-50 rounded-2xl p-7">
+        <div className="flex items-start gap-3 bg-green-100 rounded-2xl p-7">
             <div>
                 <img className="w-20 h-20 object-cover rounded-full" src={company_logo} alt="company logo" />
             </div>
