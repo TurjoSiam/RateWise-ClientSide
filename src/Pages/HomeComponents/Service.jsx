@@ -5,9 +5,9 @@ const Service = ({ item }) => {
     const { _id, company_name, company_logo, service_name, website, category } = item;
 
     return (
-        <div className="flex items-start gap-3 bg-green-100 rounded-2xl p-7">
+        <div className="flex items-start gap-2 bg-green-100 rounded-2xl p-3">
             <div>
-                <img className="w-20 h-20 object-cover rounded-full" src={company_logo} alt="company logo" />
+                <img className="w-12 h-12 object-cover rounded-full" src={company_logo} alt="company logo" />
             </div>
             <div className="w-2/3 space-y-2">
                 <h2 className="text-2xl font-bold">{company_name}</h2>

@@ -14,7 +14,7 @@ const Categories = () => {
             </div>
             <div className="cursor-pointer hover:scale-105 hover:duration-200 hover:ease-in-out rounded-xl p-5 bg-teal-50 w-fit flex flex-col items-center text-lg">
                 <IoFastFoodOutline className="text-4xl" />
-                <h2>Food & Beverage</h2>
+                <h2 className="text-center">Food & Beverage</h2>
             </div>
             <div className="cursor-pointer hover:scale-105 hover:duration-200 hover:ease-in-out rounded-xl p-5 bg-teal-50 w-fit flex flex-col items-center text-lg">
                 <BsBuildings className="text-4xl" />
@@ -30,7 +30,7 @@ const Categories = () => {
             </div>
             <div className="cursor-pointer hover:scale-105 hover:duration-200 hover:ease-in-out rounded-xl p-5 bg-teal-50 w-fit flex flex-col items-center text-lg">
                 <GiTeacher className="text-4xl" />
-                <h2>Personal Training</h2>
+                <h2 className="text-center">Personal Training</h2>
             </div>
         </div>
     );
