@@ -2,10 +2,6 @@
 
 **RateWise** is a service reviewing platform that allows customers to gain insights into the quality and reliability of services through unbiased feedback. It helps users compare services and make informed decisions based on reviews and ratings. Additionally, businesses can improve their offerings based on constructive criticism from users.
 
-## 🖼 Screenshot
-
-![RateWise Screenshot](screenshot-link-here)  
-*(Replace with an actual screenshot of your website)*
 
 ## 🌟 Key Features
 
@@ -60,11 +56,16 @@
 - `tailwindcss`: ^3.4.17
 - `vite`: ^6.0.3
 
+## 🖼 Screenshot
+
+![RateWise Screenshot]([screenshot-link-here](https://github.com/TurjoSiam/RateWise-ClientSide/blob/main/web1.png))  
+*(Replace with an actual screenshot of your website)*
+
 ## 🏃‍♂️ How to Run the Project Locally
 
-1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/ratewise.git
    cd ratewise
    npm install
    npm run dev
+
