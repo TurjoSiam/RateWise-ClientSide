@@ -58,8 +58,8 @@
 
 ## 🖼 Screenshot
 
-![RateWise Screenshot]([screenshot-link-here](https://github.com/TurjoSiam/RateWise-ClientSide/blob/main/web1.png))  
-*(Replace with an actual screenshot of your website)*
+![RateWise Screenshot](https://github.com/TurjoSiam/RateWise-ClientSide/blob/main/web1.png)  
+
 
 ## 🏃‍♂️ How to Run the Project Locally
 
