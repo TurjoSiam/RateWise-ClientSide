@@ -2,6 +2,9 @@
 
 **RateWise** is a service reviewing platform that allows customers to gain insights into the quality and reliability of services through unbiased feedback. It helps users compare services and make informed decisions based on reviews and ratings. Additionally, businesses can improve their offerings based on constructive criticism from users.
 
+## 🌍 Live Project Link
+https://ratewise-turjosiam.netlify.app
+
 
 ## 🌟 Key Features
 
