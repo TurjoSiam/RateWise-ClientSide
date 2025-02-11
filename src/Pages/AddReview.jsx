@@ -30,7 +30,7 @@ const AddReview = () => {
         data.reviewerPhoto = user?.photoURL;
         data.rating = rating;
 
-        fetch('https://assignment-11-beta.vercel.app/service-reviews', {
+        fetch('http://localhost:5000/service-reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -12,13 +12,13 @@ const MyService = () => {
 
 
     useEffect(() => {
-        // fetch(`https://assignment-11-beta.vercel.app/allservices/service?email=${user.email}`)
+        // fetch(`http://localhost:5000/allservices/service?email=${user.email}`)
         //     .then(res => res.json())
         //     .then(data => {
         //         setServices(data)
         //     })
 
-        axios.get(`https://assignment-11-beta.vercel.app/allservices/service?email=${user.email}`, { withCredentials: true })
+        axios.get(`http://localhost:5000/allservices/service?email=${user.email}`, { withCredentials: true })
             .then(res => setServices(res.data))
 
     }, [user.email]);
@@ -36,7 +36,7 @@ const MyService = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-11-beta.vercel.app/allservices/${id}`, {
+                fetch(`http://localhost:5000/allservices/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

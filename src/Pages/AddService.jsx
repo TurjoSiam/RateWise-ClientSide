@@ -14,7 +14,7 @@ const AddService = () => {
     const date = new Date().toJSON().slice(0, 10);
 
     const onSubmit = (data) => {
-        fetch('https://assignment-11-beta.vercel.app/allservices', {
+        fetch('http://localhost:5000/allservices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

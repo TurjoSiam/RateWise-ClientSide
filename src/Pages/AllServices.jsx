@@ -15,7 +15,7 @@ const AllServices = () => {
 
 
     useEffect(() => {
-        fetch(`https://assignment-11-beta.vercel.app/allservices?filter=${filter}&search=${search}`)
+        fetch(`http://localhost:5000/allservices?filter=${filter}&search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data);

@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path: "/updateservice/:id",
                 element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-                loader: ({params}) => fetch(`https://assignment-11-beta.vercel.app/allservices/updateservice/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/allservices/updateservice/${params.id}`)
             },
             {
                 path: "/register",
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
             {
                 path: "/allservices/:id",
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({params}) => fetch(`https://assignment-11-beta.vercel.app/allservices/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/allservices/${params.id}`)
             },
             {
                 path: "/addreview/:id",
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
             {
                 path: "/updatereview/:id",
                 element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-                loader: ({params}) => fetch(`https://assignment-11-beta.vercel.app/service-reviews/updatereview/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/service-reviews/updatereview/${params.id}`)
             },
             {
                 path: "/aboutus",

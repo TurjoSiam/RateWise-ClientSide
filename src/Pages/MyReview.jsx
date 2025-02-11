@@ -13,13 +13,13 @@ const MyReview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        // fetch(`https://assignment-11-beta.vercel.app/service-reviews?email=${user.email}`)
+        // fetch(`http://localhost:5000/service-reviews?email=${user.email}`)
         //     .then(res => res.json())
         //     .then(data => {
         //         setReviews(data)
         //     })
 
-        axios.get(`https://assignment-11-beta.vercel.app/service-reviews?email=${user.email}`, { withCredentials: true })
+        axios.get(`http://localhost:5000/service-reviews?email=${user.email}`, { withCredentials: true })
             .then(res => setReviews(res.data))
 
     }, [user.email])

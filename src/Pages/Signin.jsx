@@ -26,7 +26,7 @@ const Signin = () => {
             .then(result => {
                 console.log(result);
                 // const user = {email: data.email};
-                // axios.post('https://assignment-11-beta.vercel.app/jwt', user, {withCredentials: true})
+                // axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
                 // .then(res => {
                 //     console.log(res.data);
                 // })

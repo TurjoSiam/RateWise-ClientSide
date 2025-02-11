@@ -14,7 +14,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://assignment-11-beta.vercel.app/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
@@ -29,7 +29,7 @@ const Services = () => {
 
 
     return (
-        <div className="w-10/12 mx-auto my-10 flex flex-col items-center">
+        <div className="w-11/12 mx-auto my-10 flex flex-col items-center">
             <div className="flex w-full items-center justify-around">
                 <motion.div
                     animate={{ x: 200 }} 

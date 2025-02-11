@@ -22,7 +22,7 @@ const UpdateReview = () => {
 
     const onSubmit = data => {
         data.rating = rating;
-        fetch(`https://assignment-11-beta.vercel.app/service-review/${_id}`, {
+        fetch(`http://localhost:5000/service-review/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
