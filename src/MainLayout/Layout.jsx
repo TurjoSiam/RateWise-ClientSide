@@ -16,7 +16,7 @@ const Layout = () => {
     }
 
     return (
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-screen-2xl mx-auto dark:bg-slate-200">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

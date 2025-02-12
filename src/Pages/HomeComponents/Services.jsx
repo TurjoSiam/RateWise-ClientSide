@@ -14,7 +14,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://assignment-11-beta.vercel.app/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
@@ -37,7 +37,7 @@ const Services = () => {
                     transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}>
                     <img src={gear} alt="gear" />
                 </motion.div>
-                <h2 className="text-4xl underline font-bold text-blue-800 text-center mb-5">Featured Services</h2>
+                <h2 className="text-4xl underline font-bold dark:text-blue-200 text-blue-800 text-center mb-5">Featured Services</h2>
                 <motion.div
                     animate={{ x: -200 }} 
                     initial={{ x: 0 }} 

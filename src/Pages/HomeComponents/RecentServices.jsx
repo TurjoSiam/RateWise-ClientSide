@@ -16,7 +16,7 @@ const RecentServices = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/recentservices')
+        fetch('https://assignment-11-beta.vercel.app/recentservices')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
