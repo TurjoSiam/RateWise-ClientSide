@@ -13,5 +13,8 @@ module.exports = {
     flowbite.plugin(),
     require('daisyui')
   ],
+  daisyui: {
+    themes: ["light", "dark"],
+  }
 };
 
