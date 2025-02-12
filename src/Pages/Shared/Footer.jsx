@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="bg-teal-50 dark:bg-gray-900">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="lg:flex lg:justify-between">
-                    <div className="mb-5 md:mb-0">
+                    <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img src={logo} className="me-0" alt="FlowBite Logo" />
                             <span className="self-center text-4xl font-bold whitespace-nowrap text-blue-900">RateWise</span>
