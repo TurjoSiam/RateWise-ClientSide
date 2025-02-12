@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import { Slide, toast } from "react-toastify";
 import logo from "/logosm.png"
+import sun from "/sun.png"
+import moon from "/moon.png"
+import { useState } from "react";
 
 
 const Navbar = () => {
@@ -43,6 +46,28 @@ const Navbar = () => {
             })
     }
 
+    // theme toggler
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+      );
+    
+      // update state on toggle
+      const handleToggle = (e) => {
+        if (e.target.checked) {
+          setTheme("dark");
+        } else {
+          setTheme("light");
+        }
+      };
+    
+      // set theme state in localstorage on mount & also update localstorage on state change
+      useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        // add custom data-theme attribute to html tag required to update theme using DaisyUI
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+      }, [theme]);
+
 
     return (
         <div className="lg:px-20 sticky top-0 bg-teal-50 z-10">
@@ -79,6 +104,17 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
+                <button className="btn btn-square btn-ghost">
+                    <label className="swap swap-rotate w-12 h-12">
+                        <input type="checkbox" onChange={handleToggle}
+                            // show toggle image based on localstorage theme
+                            checked={theme === "light" ? false : true} />
+                        {/* light theme sun image */}
+                        <img src={sun} alt="light" className="w-8 h-8 swap-on" />
+                        {/* dark theme moon image */}
+                        <img src={moon} alt="dark" className="w-8 h-8 swap-off" />
+                    </label>
+                </button>
                 <div className="navbar-end">
                     {
                         user ?
