@@ -3,8 +3,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import { Slide, toast } from "react-toastify";
 import logo from "/logosm.png"
-import sun from "/sun.png"
-import moon from "/moon.png"
+// import sun from "/sun.png"
+// import moon from "/moon.png"
 import { useState } from "react";
 
 
@@ -52,13 +52,13 @@ const Navbar = () => {
       );
     
       // update state on toggle
-      const handleToggle = (e) => {
-        if (e.target.checked) {
-          setTheme("dark");
-        } else {
-          setTheme("light");
-        }
-      };
+    //   const handleToggle = (e) => {
+    //     if (e.target.checked) {
+    //       setTheme("dark");
+    //     } else {
+    //       setTheme("light");
+    //     }
+    //   };
     
       // set theme state in localstorage on mount & also update localstorage on state change
       useEffect(() => {
@@ -104,17 +104,17 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <button className="btn btn-square btn-ghost">
+                {/* <button className="btn btn-square btn-ghost">
                     <label className="swap swap-rotate w-12 h-12">
                         <input type="checkbox" onChange={handleToggle} className="hidden"
                             // show toggle image based on localstorage theme
-                            checked={theme === "light" ? false : true} />
+                            checked={theme === "light" ? false : true} /> */}
                         {/* light theme sun image */}
-                        <img src={sun} alt="light" className="w-5 h-5 swap-on" />
+                        {/* <img src={sun} alt="light" className="w-5 h-5 swap-on" /> */}
                         {/* dark theme moon image */}
-                        <img src={moon} alt="dark" className="w-5 h-5 swap-off" />
-                    </label>
-                </button>
+                        {/* <img src={moon} alt="dark" className="w-5 h-5 swap-off" /> */}
+                    {/* </label>
+                </button> */}
                 <div className="navbar-end">
                     {
                         user ?
