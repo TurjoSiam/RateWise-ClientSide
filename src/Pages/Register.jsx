@@ -17,26 +17,35 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: {errors} } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         createUser(data.email, data.password)
             .then(result => {
-                console.log(result);
-                userUpdateWhenSignin({
-                    displayName: data.name,
-                    photoURL: data.photo
+                //saving user data in database
+                fetch('https://assignment-11-beta.vercel.app/users', {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(data)
                 })
-                    .then(result => {
-                        console.log(result);
-                        toast.success('Registration Successful', {
-                            position: 'bottom-right',
-                            transition: Slide
-                        });
-                        signOutUser()
-                            .then(() => {
-                                navigate("/signin")
-                            });
+                    .then(() => {
+                        //update user data in firebase
+                        userUpdateWhenSignin({
+                            displayName: data.name,
+                            photoURL: data.photo
+                        })
+                            .then(result => {
+                                toast.success('Registration Successful', {
+                                    position: 'bottom-right',
+                                    transition: Slide
+                                });
+                                signOutUser()
+                                    .then(() => {
+                                        navigate("/signin")
+                                    });
+                            })
                     })
             })
             .catch(error => {
@@ -54,7 +63,7 @@ const Register = () => {
         <div className="mx-auto my-10 lg:w-10/12">
             <div className="flex items-center flex-col-reverse lg:flex-row">
                 <form onSubmit={handleSubmit(onSubmit)} className="lg:w-2/3 mx-8 bg-cyan-50 p-16 rounded-3xl border border-cyan-200">
-                <h1 className="mx-auto text-center text-[30px] font-bold mb-6">Create Your Account</h1>
+                    <h1 className="mx-auto text-center text-[30px] font-bold mb-6">Create Your Account</h1>
                     <div className="relative z-0 w-full mb-5 group">
                         <input type="text" {...register('name')} name="name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                         <label htmlFor="name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
