@@ -17,6 +17,7 @@ import UpdateService from "../Pages/UpdateService";
 import UpdateReview from "../Pages/UpdateReview";
 import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
+import Dashboard from "../Pages/Dashboard";
 
 
 
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path: "/updateservice/:id",
                 element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-                loader: ({params}) => fetch(`https://assignment-11-beta.vercel.app/allservices/updateservice/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-beta.vercel.app/allservices/updateservice/${params.id}`)
             },
             {
                 path: "/register",
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
             {
                 path: "/allservices/:id",
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({params}) => fetch(`https://assignment-11-beta.vercel.app/allservices/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-beta.vercel.app/allservices/${params.id}`)
             },
             {
                 path: "/addreview/:id",
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
             {
                 path: "/updatereview/:id",
                 element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-                loader: ({params}) => fetch(`https://assignment-11-beta.vercel.app/service-reviews/updatereview/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-beta.vercel.app/service-reviews/updatereview/${params.id}`)
             },
             {
                 path: "/aboutus",
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
             {
                 path: "/contactus",
                 element: <ContactUs></ContactUs>
+            },
+            {
+                path: "/dashboard",
+                element: <Dashboard></Dashboard>
             }
         ]
     },
