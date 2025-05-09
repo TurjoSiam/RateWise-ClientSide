@@ -23,7 +23,7 @@ const Register = () => {
         createUser(data.email, data.password)
             .then(result => {
                 //saving user data in database
-                fetch('https://assignment-11-beta.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
