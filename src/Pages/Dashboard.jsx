@@ -11,6 +11,8 @@ const Dashboard = () => {
             .then(res => setUser(res.data))
     }, [])
 
+    const [activeTab, setActiveTab] = useState("dashboard");
+
     return (
         <div>
             <div>
