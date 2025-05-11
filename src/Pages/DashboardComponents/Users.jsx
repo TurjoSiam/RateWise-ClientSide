@@ -12,9 +12,9 @@ const Users = () => {
     }, [])
 
     return (
-        <div>
+        <div className="min-w-full">
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table text-center">
                     {/* head */}
                     <thead>
                         <tr>
@@ -29,7 +29,7 @@ const Users = () => {
                             user.map(item =>
                                 <tr>
                                     <td>
-                                        <div className="flex items-center gap-3">
+                                        <div className="flex justify-center items-center gap-3">
                                             <div className="avatar">
                                                 <div className="mask mask-squircle h-12 w-12">
                                                     <img
