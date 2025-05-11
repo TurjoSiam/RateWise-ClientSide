@@ -1,5 +1,5 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import Statistics from "./DashboardComponents/Statistics";
 import Users from "./DashboardComponents/Users";
 import ServicesDash from "./DashboardComponents/ServicesDash";
@@ -7,12 +7,7 @@ import ServicesDash from "./DashboardComponents/ServicesDash";
 
 const Dashboard = () => {
 
-    const [user, setUser] = useState({});
 
-    useEffect(() => {
-        axios.get("http://localhost:5000/users")
-            .then(res => setUser(res.data))
-    }, [])
 
     const [activeTab, setActiveTab] = useState("dashboard");
 
