@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Users = () => {
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState([]);
 
     useEffect(() => {
         axios.get("http://localhost:5000/users")
@@ -25,28 +25,32 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-                        <tr>
-                            <td>
-                                <div className="flex items-center gap-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle h-12 w-12">
-                                            <img
-                                                src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                                                alt="Avatar Tailwind CSS Component" />
+                        {
+                            user.map(item =>
+                                <tr>
+                                    <td>
+                                        <div className="flex items-center gap-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-squircle h-12 w-12">
+                                                    <img
+                                                        src={item?.photo}
+                                                        alt="User Photo" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div className="font-bold">{item?.name}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Email
-                            </td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">Make Admin</button>
-                            </th>
-                        </tr>
+                                    </td>
+                                    <td>
+                                        {item?.email}
+                                    </td>
+                                    <th>
+                                        <button className="btn btn-ghost btn-xs">Make Admin</button>
+                                    </th>
+                                </tr>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>
