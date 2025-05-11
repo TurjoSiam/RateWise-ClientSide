@@ -16,10 +16,11 @@ const Users = () => {
             <div className="overflow-x-auto">
                 <table className="table text-center">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-teal-50">
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -31,7 +32,7 @@ const Users = () => {
                                     <td>
                                         <div className="flex justify-center items-center gap-3">
                                             <div className="avatar">
-                                                <div className="mask mask-squircle h-12 w-12">
+                                                <div className="mask mask-decagon h-12 w-12">
                                                     <img
                                                         src={item?.photo}
                                                         alt="User Photo" />
@@ -44,6 +45,9 @@ const Users = () => {
                                     </td>
                                     <td>
                                         {item?.email}
+                                    </td>
+                                    <td>
+                                        {item?.role}
                                     </td>
                                     <th>
                                         <button className="btn btn-ghost btn-xs">Make Admin</button>
